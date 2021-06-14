@@ -18,11 +18,38 @@ namespace GoSearchSAE
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+
+
+
+    
     public partial class MainWindow : Window
     {
+
+        internal static ListView listView;
+
+
         public MainWindow()
         {
             InitializeComponent();
+            
+
+        }
+
+
+        public static void Initialize()
+        {
+
+            //Start scan etc...
+
+
+            //Init view
+            
+            listView = new ListView();
+
+
+
+
         }
     }
 }
