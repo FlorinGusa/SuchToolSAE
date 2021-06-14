@@ -32,7 +32,7 @@ namespace GoSearchSAE
         public MainWindow()
         {
             InitializeComponent();
-            
+            Initialize();
 
         }
 
@@ -45,7 +45,8 @@ namespace GoSearchSAE
 
             //Init view
             
-            listView = new ListView();
+            listView = new ListView() {};
+            
 
 
 

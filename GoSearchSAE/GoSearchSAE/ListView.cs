@@ -8,26 +8,42 @@ namespace GoSearchSAE
     class ListView
     {
         private string[] _headerTitles;
-        public ListBoxItem[] listBoxItems;
+        private List<ListItem> listBoxItems;
         private int _length;
+        private ListBox _listBox;
 
 
         //Public constants
         public string[] HeaderTitles { get => _headerTitles; set => _headerTitles = value; }
-        
+
         public ListView()
         {
-            fillListView();
+
+            _length = 10;
+            createItems();
+            createListBox();
         }
 
-        void fillListView()
+        void createListBox()
+        {
+            _listBox = new ListBox();
+            _listBox.ItemsSource = listBoxItems;
+            
+        }
+       
+
+        void bindListBox()
         {
 
+
+        }
+    void createItems()
+        {
+            //Datenbank 18,7mb
             for(var i = 0; i < _length; i++)
             {
-                //ListItem lbi = new ListItem();
-                
-
+                var lbi = new ListItem(i.ToString(), i.ToString());
+               // listBoxItems.Add(lbi);
             }
 
         }

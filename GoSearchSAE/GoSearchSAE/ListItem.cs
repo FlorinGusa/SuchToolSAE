@@ -7,12 +7,12 @@ namespace GoSearchSAE
     class ListItem
     {
 
-
         private string _name;
         private string _path;
         private byte[] _size;
-        public int id { get => id; set => id = value; }
         private string[] tags;
+
+        public int id { get => id; set => id = value; }
         public string Name { get => _name; set => _name = value; }
         public string Path { get => _path; set => _path = value; }
         public byte[] Size { get => _size; set => _size = value; }

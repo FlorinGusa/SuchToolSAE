@@ -8,11 +8,10 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
 
-        <StackPanel>
-            <ListBox ItemsSource="{Binding itemElements;}" 
+            <TextBlock></TextBlock>
+            <ListBox Name="mListBox" ItemsSource="{Binding listView.listBoxItems}" 
              SelectedValue="{Binding selectedItem}" 
              SelectedValuePath="Id" DisplayMemberPath="Name" />
-        </StackPanel>
 
     </Grid>
 </Window>
