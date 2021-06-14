@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoSearchSAE", "GoSearchSAE\GoSearchSAE.csproj", "{EDFD2850-C83E-41D9-883A-AB1E4161454E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDFD2850-C83E-41D9-883A-AB1E4161454E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDFD2850-C83E-41D9-883A-AB1E4161454E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDFD2850-C83E-41D9-883A-AB1E4161454E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDFD2850-C83E-41D9-883A-AB1E4161454E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {05C939F1-738B-42FE-89CF-27E75435F79E}
+	EndGlobalSection
+EndGlobal
