@@ -5,13 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GoSearchSAE"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="800" Width="1024">
+    <Window.Resources>
+        <Style TargetType="ListViewItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
+    </Window.Resources>
     <Grid>
-
-            <TextBlock></TextBlock>
-            <ListBox Name="mListBox" ItemsSource="{Binding listView.listBoxItems}" 
-             SelectedValue="{Binding selectedItem}" 
-             SelectedValuePath="Id" DisplayMemberPath="Name" />
-
+        <ListView Name="listView">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="256" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Path" Width="436" DisplayMemberBinding="{Binding Path}"/>
+                    <GridViewColumn Header="Size" Width="100" DisplayMemberBinding="{Binding Size}"/>
+                    <GridViewColumn Header="Last Modified" Width="100" DisplayMemberBinding="{Binding LastModified}"/>
+                  </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
+    
+    
+    
 </Window>

@@ -4,13 +4,18 @@ using System.Text;
 
 namespace GoSearchSAE
 {
-    class ListItem
+    public class ListItem
     {
 
         private string _name;
         private string _path;
         private byte[] _size;
+        
+        private FileType _fileType;
+        private Date _lastModified;
+            
         private string[] tags;
+
 
         public int id { get => id; set => id = value; }
         public string Name { get => _name; set => _name = value; }
@@ -20,7 +25,8 @@ namespace GoSearchSAE
 
         public ListItem(string name, string path)
         {
-
+            this.Name = name;
+            this.Path = path;
 
         }
 

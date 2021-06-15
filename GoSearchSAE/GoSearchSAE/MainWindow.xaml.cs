@@ -15,42 +15,35 @@ using System.Windows.Shapes;
 
 namespace GoSearchSAE
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    /// 
 
-
-
-    
     public partial class MainWindow : Window
     {
 
-        internal static ListView listView;
-
+        public static ListHelper LIST_HELPER;
+  
 
         public MainWindow()
         {
+
             InitializeComponent();
             Initialize();
 
+
         }
 
 
-        public static void Initialize()
+        public void Initialize()
         {
-
-            //Start scan etc...
-
-
-            //Init view
-            
-            listView = new ListView() {};
-            
-
-
-
-
+            //Singleton class
+            LIST_HELPER = ListHelper.Instance;
+            LIST_HELPER.addItems("Test Item", "C://", 10);
+            LIST_HELPER.setDefaults(listView);
         }
+
     }
+
+
+
+
+
 }
