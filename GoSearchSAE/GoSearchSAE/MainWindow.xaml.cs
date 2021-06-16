@@ -28,7 +28,7 @@ namespace GoSearchSAE
             InitializeComponent();
             Initialize();
 
-
+            
         }
 
 
@@ -36,8 +36,10 @@ namespace GoSearchSAE
         {
             //Singleton class
             LIST_HELPER = ListHelper.Instance;
-            LIST_HELPER.addItems("Test Item", "C://", 10);
+            LIST_HELPER.addFolder("X:/TESTDATA");
             LIST_HELPER.setDefaults(listView);
+       
+        
         }
 
     }
