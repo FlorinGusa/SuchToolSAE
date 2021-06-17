@@ -20,7 +20,6 @@ namespace GoSearchSAE
     {
 
         public static ListHelper LIST_HELPER;
-  
 
         public MainWindow()
         {
@@ -36,8 +35,8 @@ namespace GoSearchSAE
         {
             //Singleton class
             LIST_HELPER = ListHelper.Instance;
-            LIST_HELPER.addFolder("X:/TESTDATA");
-            LIST_HELPER.setDefaults(listView);
+            LIST_HELPER.setupDriveInfo();
+            LIST_HELPER.setItemSource(listView);
        
         
         }

@@ -14,6 +14,8 @@ namespace GoSearchSAE
 
         public static List<ListItem> LIST_ITEMS = new List<ListItem> { };
         public static TextExtractorD extractor = new TextExtractorD();
+        string[] sizes = { "B", "KB", "MB", "GB", "TB" };
+
 
         static ListHelper()
         {
@@ -30,20 +32,21 @@ namespace GoSearchSAE
             {
                 return instance;
             }
+        
         }
 
-      
-        public DirectoryInfo readFile(string path)
+        public string formatFileSize(long size)
         {
-            if (isValidPath(path))
-            {
-                DirectoryInfo sd = new DirectoryInfo(path);
-                return sd;
-            }
-            return null;
+            if (size == 0)
+                return "0" + sizes[0];
+            
+            long bytes = Math.Abs(size);
+            int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
+            double num = Math.Round(bytes / Math.Pow(1024, place), 1);
+            return (Math.Sign(size) * num).ToString() + sizes[place];
         }
 
-        public void setDefaults(ListView listView)
+        public void setItemSource(ListView listView)
         {
             listView.ItemsSource = LIST_ITEMS;
         }
@@ -78,30 +81,26 @@ namespace GoSearchSAE
             }
         }
 
-        public void addFolder(string path)
+        public void setupDriveInfo()
         {
-            try
-            {
-                foreach(string f in Directory.GetFiles(path))
-                {
-                    ListItem li = new ListItem(path);
+            DriveInfo driveInfo = new DriveInfo(@"C:\");
+            DirectoryInfo dirInfo = driveInfo.RootDirectory;
+            
+            //Files
+            FileInfo[] fileNames = dirInfo.GetFiles("*.*");
 
-                    li.getDefaultsFromPath(path);
-                    //TODO: Fix
-                    li.Name = f;
-                    addItem(li);
-                }
-
-                foreach (string d in Directory.GetDirectories(path))
-                {
-                }
-            }catch(Exception e)
+            foreach (FileInfo fi in fileNames)
             {
-                Console.Write(e);
+                addItem(new ListItem(fi));
             }
 
+            //Folders
+            DirectoryInfo[] dirs = dirInfo.GetDirectories();
+            foreach(DirectoryInfo di in dirs)
+            {
+                addItem(new ListItem(di));
+            }
         }
-
         public bool isValidPath(string path, bool allowRelativePaths = false)
         {
             bool isValid = true;
@@ -129,4 +128,5 @@ namespace GoSearchSAE
         }
 
     }
+
 }
