@@ -63,23 +63,6 @@ namespace GoSearchSAE
         }
 
 
-        public void addItem(string path)
-        {
-            if (!isValidPath(path)) return;
-
-            ListItem item = new ListItem(path);
-            item.getDefaultsFromPath();
-            LIST_ITEMS.Add(item);
-        }
-
-        public void addItems(string path, int amt)
-        {
-            for (var i = 0; i < amt; i++)
-            {
-                addItem(path);
-            }
-        }
-
         public void setupDriveInfo()
         {
             DriveInfo driveInfo = new DriveInfo(@"C:\");
@@ -100,31 +83,7 @@ namespace GoSearchSAE
                 addItem(new ListItem(di));
             }
         }
-        public bool isValidPath(string path, bool allowRelativePaths = false)
-        {
-            bool isValid = true;
-
-            try
-            {
-                string fullPath = Path.GetFullPath(path);
-
-                if (allowRelativePaths)
-                {
-                    isValid = Path.IsPathRooted(path);
-                }
-                else
-                {
-                    string root = Path.GetPathRoot(path);
-                    isValid = string.IsNullOrEmpty(root.Trim(new char[] { '\\', '/' })) == false;
-                }
-            }
-            catch (Exception ex)
-            {
-                isValid = false;
-            }
-
-            return isValid;
-        }
+       
 
     }
 
