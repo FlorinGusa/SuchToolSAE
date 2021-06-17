@@ -12,18 +12,21 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <ListView Name="listView">
+        <TextBox Margin="206,0,10,704"/>
+        <ListView Name="listView" Margin="206,37,10,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name" Width="256" DisplayMemberBinding="{Binding Name}"/>
                     <GridViewColumn Header="Path" Width="436" DisplayMemberBinding="{Binding Path}"/>
                     <GridViewColumn Header="Size" Width="100" DisplayMemberBinding="{Binding Size}"/>
                     <GridViewColumn Header="Last Modified" Width="100" DisplayMemberBinding="{Binding LastModified}"/>
-                  </GridView>
+                </GridView>
             </ListView.View>
         </ListView>
+        <TreeView x:Name="treeView" Margin="0,0,823,10"/>
+        
     </Grid>
-    
-    
-    
+
+
+
 </Window>

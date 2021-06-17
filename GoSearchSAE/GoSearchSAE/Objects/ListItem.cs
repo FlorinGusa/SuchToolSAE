@@ -1,25 +1,25 @@
-﻿using System;
+﻿using GoSearchSAE.Util;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
 namespace GoSearchSAE
 {
-    public class ListItem
+    [Serializable]
+    public class ListItem : PropertyNotifier
     {
 
         private string _name;
         private string _path;
         private string _size;
 
-        private FileType _fileType;
         private DateTime _lastModified;
         private FileInfo _fileInfo;
         private DirectoryInfo _dirInfo;
         private string _extension;
 
 
-        public int id { get => id; set => id = value; }
         public string Name { get => _name; set => _name = value; }
         public string Path { get => _path; set => _path = value; }
         public string Size { get => _size; set => _size = value; }

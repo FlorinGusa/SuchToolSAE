@@ -34,7 +34,6 @@ namespace GoSearchSAE
             }
         
         }
-
         public string formatFileSize(long size)
         {
             if (size == 0)
