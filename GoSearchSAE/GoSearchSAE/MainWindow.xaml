@@ -8,8 +8,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1024">
 
-
-
     <Window.Resources>
         <Style TargetType="{x:Type ListViewItem}">
             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
