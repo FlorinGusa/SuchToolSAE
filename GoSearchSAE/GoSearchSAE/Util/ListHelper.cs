@@ -13,7 +13,6 @@ namespace GoSearchSAE
         private static readonly ListHelper instance = new ListHelper();
 
         public static List<ListItem> LIST_ITEMS = new List<ListItem> { };
-        public static TextExtractorD extractor = new TextExtractorD();
         string[] sizes = { "B", "KB", "MB", "GB", "TB" };
 
 
