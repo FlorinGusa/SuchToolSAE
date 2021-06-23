@@ -13,11 +13,12 @@ namespace GoSearchSAE
     {
 
         private object dummyNode = null;
+        // 1-argument constructor
         public FileTree(TreeView treeView)
         {
             populateTree(treeView);
         }
-
+        // displays the file in tree View
         void populateTree(TreeView treeView)
         {
 
@@ -44,7 +45,7 @@ namespace GoSearchSAE
         {
             ListHelper.Instance.clearList();
         }
-
+        // expands the selected folder
         void folderExpanded(object sender, RoutedEventArgs e)
         {
             TreeViewItem item = (TreeViewItem)sender;

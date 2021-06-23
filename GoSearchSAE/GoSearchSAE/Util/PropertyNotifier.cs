@@ -13,7 +13,7 @@ namespace GoSearchSAE.Util
         [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
-
+        // invokes the method on property change for given propertyName
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

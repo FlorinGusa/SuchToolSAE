@@ -10,10 +10,11 @@ namespace GoSearchSAE
 {
     public sealed class ListHelper
     {
+        // create new ListHelper instance
         private static readonly ListHelper instance = new ListHelper();
-
+        // initialize LIST_ITEMS to empty list
         public static List<ListItem> LIST_ITEMS = new List<ListItem> { };
-        
+        // initialize the file sizes e.g Bytes, Kilo Bytes, Mega Bytes, Giga Bytes, Tera Bytes
         string[] sizes = { "B", "KB", "MB", "GB", "TB" };
 
 
@@ -25,7 +26,7 @@ namespace GoSearchSAE
         {
         }
 
-
+        // create static single instance of ListHelper
         public static ListHelper Instance
         {
             get
@@ -34,6 +35,8 @@ namespace GoSearchSAE
             }
         
         }
+        // formats the given size with sizes array
+        // e.g 0B, 5MB, 3KB ..
         public string formatFileSize(long size)
         {
             if (size == 0)
@@ -44,12 +47,12 @@ namespace GoSearchSAE
             double num = Math.Round(bytes / Math.Pow(1024, place), 1);
             return (Math.Sign(size) * num).ToString() + sizes[place];
         }
-
+        // sets source for ListView population
         public void setItemSource(ListView listView)
         {
             listView.ItemsSource = LIST_ITEMS;
         }
-
+        // adds given entry to LIST_ITEMS list
         public void addItem(ListItem entry)
         {
             LIST_ITEMS.Add(entry);
@@ -57,7 +60,9 @@ namespace GoSearchSAE
 
         public void addItems(ListItem entry, int amt)
         {
-            for(var i = 0; i < amt; i++) {
+            // adds single entry multiple times in the list
+            public void addItems(ListItem entry, int amt)
+            for (var i = 0; i < amt; i++) {
                 addItem(entry);    
             }
         }
@@ -66,7 +71,9 @@ namespace GoSearchSAE
         {
             //listView.Items.Clear();
         }
-
+        // sets up default drive to C
+        // gets the files names in current directory and adds them to LIST_ITMES
+        // gets the sub directories in current directory and adds them to LIST_ITMES
         public void setupDriveInfo()
         {
             DriveInfo driveInfo = new DriveInfo(@"C:\");

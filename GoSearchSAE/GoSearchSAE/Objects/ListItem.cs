@@ -19,15 +19,23 @@ namespace GoSearchSAE
         private DirectoryInfo _dirInfo;
         private string _extension;
 
-
+        // gets and sets the _name
         public string Name { get => _name; set => _name = value; }
+        // gets and sets the _path
         public string Path { get => _path; set => _path = value; }
+
+        // gets and sets the _size
         public string Size { get => _size; set => _size = value; }
+        // gets and sets the _extension
         public string Extension { get => _extension; set => _extension = value; }
+        // gets and sets the _lastModified
         public DateTime LastModified { get => _lastModified; set => _lastModified = value; }
+        // gets and sets the _fileInfo
         public FileInfo FileInfo { get => _fileInfo; set => _fileInfo = value; }
+        // gets and sets the _dirInfo
         public DirectoryInfo DirInfo { get => _dirInfo; set => _dirInfo = value; }
 
+        // lists the files from given path
         public ListItem(string path)
         {
             _fileInfo = new FileInfo(this.Path);
@@ -46,7 +54,7 @@ namespace GoSearchSAE
             _fileInfo = info;
             getDefaultsFromPath();
         }
-
+        // sets defauls values for folder( name, path, lastModified)
         public void setFolderDefaults()
         {
             this.Name = _dirInfo.Name;
