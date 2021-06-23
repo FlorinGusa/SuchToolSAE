@@ -6,41 +6,39 @@
         xmlns:local="clr-namespace:GoSearchSAE"
         xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="GoSearchSAE.MainWindow"
         mc:Ignorable="d"
-        Title="GoSearch" Height="800" Width="1024" Icon="img\logo\logo_small_icon.ico">
+        Title="GoSearch" Height="800" Width="1100" Icon="img\logo\logo_small_icon.ico"
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen" 
+        
+    
+    
+
+        >
+
     <Window.Resources>
         <Style TargetType="{x:Type ListViewItem}">
             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            
         </Style>
     </Window.Resources>
     <Grid>
 
-        <ListView x:Name="listView" Margin="201,37,15,0">
+        <ListView x:Name="listView" Margin="201,37,15,0" Width="auto" HorizontalAlignment="Center">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Name" Width="256" DisplayMemberBinding="{Binding Name}"/>
-                    <GridViewColumn Header="Path" Width="436" DisplayMemberBinding="{Binding Path}"/>
-                    <GridViewColumn Header="Size" Width="100" DisplayMemberBinding="{Binding Size}"/>
-                    <GridViewColumn Header="Last Modified" Width="100" DisplayMemberBinding="{Binding LastModified}"/>
+                    <GridViewColumn  Header="Name" Width="200" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Path" Width="250" DisplayMemberBinding="{Binding Path}"/>
+                    <GridViewColumn Header="Last Modified" Width="200" DisplayMemberBinding="{Binding LastModified}"/>
+                    <GridViewColumn Header="Size" Width="50" DisplayMemberBinding="{Binding Size}"/>
+                    
                 </GridView>
             </ListView.View>
         </ListView>
-        <TreeView x:Name="treeView" Margin="0,0,823,10"/>
-        <hc:SearchBar x:Name="searchBar" Margin="201,0,15,721" Text="SearchBar" TextWrapping="Wrap"/>
+        <TreeView x:Name="treeView" Margin="10,10,0,13" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" Height="auto" MinWidth="250"/>
+        <hc:SearchBar x:Name="searchBar" Margin="201,0,15,721" Text="SearchBar" TextWrapping="Wrap" Width="736" />
 
     </Grid>
 
 
 
 </Window>
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
