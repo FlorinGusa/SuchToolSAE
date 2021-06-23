@@ -13,12 +13,7 @@ namespace GoSearchSAE
         private static readonly ListHelper instance = new ListHelper();
 
         public static List<ListItem> LIST_ITEMS = new List<ListItem> { };
-<<<<<<< HEAD
         
-
-=======
-        public static TextExtractorD extractor = new TextExtractorD();
->>>>>>> parent of 283d303 (Merge branch 'main' of https://github.com/FlorinGusa/SuchToolSAE into main)
         string[] sizes = { "B", "KB", "MB", "GB", "TB" };
 
 
