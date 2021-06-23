@@ -1,13 +1,15 @@
-﻿using System;
+﻿using GoSearchSAE.Util;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace GoSearchSAE
 {
-    public class FileTree
+    public class FileTree : PropertyNotifier
     {
 
         private object dummyNode = null;
@@ -18,19 +20,30 @@ namespace GoSearchSAE
 
         void populateTree(TreeView treeView)
         {
+
+            List<string> debugtext = new List<string>();
             //Set up drive tree view
             foreach (string s in Directory.GetLogicalDrives())
             {
                 TreeViewItem item = new TreeViewItem();
-                item.Header = s;
+                item.Header = s;    
                 item.Tag = s;
                 item.FontWeight = FontWeights.Normal;
                 item.Items.Add(dummyNode);
                 item.Expanded += new RoutedEventHandler(folderExpanded);
+                item.MouseDown += new MouseButtonEventHandler(clickedItem);
                 treeView.Items.Add(item);
+                debugtext.Add(s);
+            
             }
+
+
         }
 
+        void clickedItem(object sender, RoutedEventArgs e)
+        {
+            ListHelper.Instance.clearList();
+        }
 
         void folderExpanded(object sender, RoutedEventArgs e)
         {

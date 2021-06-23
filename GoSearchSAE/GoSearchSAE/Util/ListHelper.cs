@@ -13,6 +13,8 @@ namespace GoSearchSAE
         private static readonly ListHelper instance = new ListHelper();
 
         public static List<ListItem> LIST_ITEMS = new List<ListItem> { };
+        
+
         string[] sizes = { "B", "KB", "MB", "GB", "TB" };
 
 
@@ -61,6 +63,10 @@ namespace GoSearchSAE
             }
         }
 
+        public void clearList()
+        {
+            //listView.Items.Clear();
+        }
 
         public void setupDriveInfo()
         {
