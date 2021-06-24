@@ -61,7 +61,6 @@ namespace GoSearchSAE
         public void addItems(ListItem entry, int amt)
         {
             // adds single entry multiple times in the list
-            public void addItems(ListItem entry, int amt)
             for (var i = 0; i < amt; i++) {
                 addItem(entry);    
             }
