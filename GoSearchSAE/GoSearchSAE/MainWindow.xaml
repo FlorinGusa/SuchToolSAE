@@ -9,9 +9,6 @@
         Title="GoSearch" Height="2450" Width="2176" Icon="img\logo\logo_small_icon.ico"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
-     WindowStyle="None"
-    WindowState="Normal" 
-
     ShowInTaskbar="True"
     MaxHeight="800"
     MaxWidth="1100"
