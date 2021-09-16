@@ -28,20 +28,28 @@ namespace GoSearchSAE
 
             InitializeComponent();
             Initialize();
+
             
-
-
         }
 
 
         public void Initialize()
         {
+
             FileTree ft = new FileTree(treeView);
             //Set up list
             LIST_HELPER = ListHelper.Instance;
             LIST_HELPER.setupDriveInfo();
             LIST_HELPER.setItemSource(listView);
+       
+        
         }
+
+
+
+
+
+      
     }
 
 
