@@ -52,7 +52,7 @@ namespace GoSearchSAE
         {
             listView.ItemsSource = LIST_ITEMS;
         }
-        // adds given entry to LIST_ITEMS list
+
         public void addItem(ListItem entry)
         {
             LIST_ITEMS.Add(entry);
