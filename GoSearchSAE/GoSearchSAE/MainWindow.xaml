@@ -8,13 +8,11 @@
         mc:Ignorable="d"
         Title="GoSearch" Height="2450" Width="2176" Icon="img\logo\logo_small_icon.ico"
         ResizeMode="CanMinimize"
-        WindowStartupLocation="CenterScreen"
-     WindowStyle="None"
-    WindowState="Normal" 
-
-    ShowInTaskbar="True"
-    MaxHeight="800"
-    MaxWidth="1100"
+        WindowStartupLocation="CenterScreen" 
+        WindowState="Normal" 
+        ShowInTaskbar="True"
+        MaxHeight="800"
+        MaxWidth="1100"
     >
 
 
@@ -40,10 +38,39 @@
 
 
                 </GridView>
+                
+                
+                
+                
+                
             </ListView.View>
+            
+            
+            
+
+            <ListView.ContextMenu>
+                <ContextMenu>
+
+                    <MenuItem Command="Open">
+                    </MenuItem>
+                    <MenuItem Command="Copy">
+                    </MenuItem>
+                    <MenuItem Command="Cut">
+                    </MenuItem>
+                    <MenuItem Command="Delete">
+                    </MenuItem>
+                    
+                    
+                    
+
+
+                </ContextMenu>
+                
+            </ListView.ContextMenu>
         </ListView>
         <TreeView x:Name="treeView" Margin="10,10,0,13" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" Height="auto" MinWidth="250"/>
         <hc:SearchBar x:Name="searchBar"   Margin="201,0,15,721" Text="SearchBar" TextWrapping="Wrap" Width="736"/>
+        
 
 
 
@@ -73,7 +100,7 @@
             <Separator/>
 
             <StatusBarItem HorizontalAlignment="Right">
-                <Image Source="images\help.bmp" Width="16" Height="16"/>
+               
             </StatusBarItem>
         </StatusBar>
 
