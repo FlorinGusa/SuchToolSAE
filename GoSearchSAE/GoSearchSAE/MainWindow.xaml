@@ -50,8 +50,7 @@
 
             <ListView.ContextMenu>
                 <ContextMenu>
-
-                    <MenuItem Command="Open">
+                    <MenuItem Name="open_command" Header="Open In Explorer" Command="{Binding ShowInExplorer}">
                     </MenuItem>
                     <MenuItem Command="Copy">
                     </MenuItem>
@@ -59,11 +58,6 @@
                     </MenuItem>
                     <MenuItem Command="Delete">
                     </MenuItem>
-                    
-                    
-                    
-
-
                 </ContextMenu>
                 
             </ListView.ContextMenu>
