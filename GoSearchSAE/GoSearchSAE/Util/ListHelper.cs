@@ -10,13 +10,9 @@ namespace GoSearchSAE
 {
     public sealed class ListHelper
     {
-        // create new ListHelper instance
         private static readonly ListHelper instance = new ListHelper();
-        // initialize LIST_ITEMS to empty list
         public static List<ListItem> LIST_ITEMS = new List<ListItem> { };
-        // initialize the file sizes e.g Bytes, Kilo Bytes, Mega Bytes, Giga Bytes, Tera Bytes
         string[] sizes = { "B", "KB", "MB", "GB", "TB" };
-
 
         static ListHelper()
         {
@@ -39,13 +35,21 @@ namespace GoSearchSAE
         // e.g 0B, 5MB, 3KB ..
         public string formatFileSize(long size)
         {
-            if (size == 0)
-                return "0" + sizes[0];
-            
-            long bytes = Math.Abs(size);
-            int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
-            double num = Math.Round(bytes / Math.Pow(1024, place), 1);
-            return (Math.Sign(size) * num).ToString() + sizes[place];
+            long bytes = (long)size;
+
+            if (bytes == -1)
+                return "";
+
+            if (bytes < 1024)
+                return bytes + " B";
+
+            if (bytes < 1024 * 1024)
+                return System.Convert.ToInt32(bytes / 1024.0) + " KB";
+
+            if (bytes < 1024 * 1024 * 1024)
+                return (bytes / 1024.0 / 1024.0).ToString("F2") + " MB";
+
+            return (bytes / 1024.0 / 1024.0 / 1024.0).ToString("F2") + " GB";
         }
         // sets source for ListView population
         public void setItemSource(ListView listView)
@@ -61,9 +65,11 @@ namespace GoSearchSAE
         public void addItems(ListItem entry, int amt)
         {
             // adds single entry multiple times in the list
-            for (var i = 0; i < amt; i++) {
-                addItem(entry);    
+            for (var i = 0; i < amt; i++)
+            {
+                addItem(entry);
             }
+        
         }
 
         public void clearList()
@@ -88,13 +94,12 @@ namespace GoSearchSAE
 
             //Folders
             DirectoryInfo[] dirs = dirInfo.GetDirectories();
+           
             foreach(DirectoryInfo di in dirs)
             {
                 addItem(new ListItem(di));
             }
         }
-       
-
     }
 
 }
