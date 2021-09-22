@@ -1,6 +1,7 @@
 ﻿using GoSearchSAE.Util;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
@@ -10,6 +11,14 @@ namespace GoSearchSAE
     {
         public Command ShowInExplorerCommand { get; }
 
+        private Command _filterElementsCommand;
+        public Command FilterElementsCommand => _filterElementsCommand ??= new Command(o => ExecuteFiltering());
+
+        private void ExecuteFiltering()
+        {
+            var ha = SearchText;
+            //throw new NotImplementedException();
+        }
 
         public MainViewModel()
         {
@@ -38,14 +47,16 @@ namespace GoSearchSAE
 
         }
 
-        private string _SearchText;
+        //public ObservableCollection<ListItem> ObservableItems
+
+        private string _searchText;
 
         public string SearchText
         {
-            get => _SearchText;
+            get => _searchText;
             set
             {
-                _SearchText = value;
+                _searchText = value;
                 OnPropertyChanged();
             }
         }

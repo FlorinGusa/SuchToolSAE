@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GoSearchSAE"
         xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="GoSearchSAE.MainWindow"
+        
         mc:Ignorable="d"
         Title="GoSearch" Height="2450" Width="2176" Icon="img\logo\logo_small_icon.ico"
         ResizeMode="CanMinimize"
@@ -27,22 +28,15 @@
     <Grid>
 
 
-        <ListView x:Name="listView" Margin="201,37,15,0" Width="auto" HorizontalAlignment="Center">
+        <ListView ItemsSource="{Binding Ober}" x:Name="listView" Margin="201,37,15,0" Width="auto" HorizontalAlignment="Center">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Name}" />
                     <GridViewColumn Header="Path" Width="250" DisplayMemberBinding="{Binding Path}"/>
                     <GridViewColumn Header="Last Modified" Width="200" DisplayMemberBinding="{Binding LastModified}"/>
                     <GridViewColumn Header="Size" Width="50" DisplayMemberBinding="{Binding Size}"/>
-
-
-
                 </GridView>
-                
-                
-                
-                
-                
+
             </ListView.View>
             
             
@@ -63,7 +57,7 @@
             </ListView.ContextMenu>
         </ListView>
         <TreeView x:Name="treeView" Margin="10,10,0,13" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" Height="auto" MinWidth="250"/>
-        <hc:SearchBar x:Name="searchBar"   Margin="201,0,15,721" Text="SearchBar" TextWrapping="Wrap" Width="736"/>
+        <hc:SearchBar x:Name="searchBar" Margin="201,0,15,721" TextWrapping="Wrap" Width="736" Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Command="{Binding FilterElementsCommand}" />
         
 
 
@@ -97,6 +91,7 @@
                
             </StatusBarItem>
         </StatusBar>
+        
 
 
 

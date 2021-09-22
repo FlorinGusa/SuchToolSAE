@@ -28,8 +28,8 @@ namespace GoSearchSAE
 
             InitializeComponent();
             Initialize();
+            DataContext = new MainViewModel();
 
-            
         }
 
 
@@ -41,15 +41,15 @@ namespace GoSearchSAE
             LIST_HELPER = ListHelper.Instance;
             LIST_HELPER.setupDriveInfo();
             LIST_HELPER.setItemSource(listView);
-       
-        
+
+
         }
 
 
 
 
 
-      
+
     }
 
 
